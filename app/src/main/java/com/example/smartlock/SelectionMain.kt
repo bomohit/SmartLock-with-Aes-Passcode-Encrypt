@@ -2,9 +2,7 @@ package com.example.smartlock
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smartlock.R
 import kotlinx.android.synthetic.main.selection_main.*
 
 class SelectionMain : AppCompatActivity() {
@@ -16,7 +14,7 @@ class SelectionMain : AppCompatActivity() {
             startActivity(Intent(this, SelectionLogin::class.java))
         }
 
-        buttonSignUp.setOnClickListener {
+        buttonSignup.setOnClickListener {
             startActivity(Intent(this, SelectionSignUp::class.java))
         }
     }
