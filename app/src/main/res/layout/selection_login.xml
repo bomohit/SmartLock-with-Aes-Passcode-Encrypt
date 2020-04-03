@@ -29,7 +29,7 @@
         android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
