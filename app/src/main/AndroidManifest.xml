@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SelectionMain" />
+        <activity android:name=".SelectionMain" />
+        <activity android:name=".SelectionLogin" />
     </application>
 
 </manifest>

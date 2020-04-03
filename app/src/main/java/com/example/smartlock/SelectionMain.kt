@@ -1,4 +1,4 @@
-package com.example.smartlock.ui
+package com.example.smartlock
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
