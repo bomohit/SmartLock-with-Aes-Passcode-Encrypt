@@ -6,6 +6,7 @@ import android.util.Log.d
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.getField
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.selection_signup.*
 import java.util.*
@@ -51,7 +52,7 @@ class SelectionSignUp : AppCompatActivity(), View.OnClickListener {
         db.collection("User").document("$email")
             .get()
             .addOnSuccessListener { result ->
-                if (result!= null) {
+                if (result.getField<String>("email")!= null) {
                     editEmail.error = "Email Already Use"
                 } else {
                     editEmail.error = null
