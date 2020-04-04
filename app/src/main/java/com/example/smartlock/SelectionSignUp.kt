@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log.d
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.getField
@@ -22,10 +23,13 @@ class SelectionSignUp : AppCompatActivity(), View.OnClickListener {
         buttonSignup.setOnClickListener(this)
         d("bomohit", "on create")
 
+        progressBarSignUp.visibility = View.INVISIBLE
+
     }
 
     override fun onClick(v: View) {
         val i = v.id
+        progressBarSignUp.visibility = View.VISIBLE
 
         when (i) {
             R.id.buttonSignup -> createAccount(editFullName.text.toString(), editEmail.text.toString(), editPassword.text.toString())
@@ -37,6 +41,7 @@ class SelectionSignUp : AppCompatActivity(), View.OnClickListener {
 
         if (!validateForm()) {
             d("bomohit", "Failed")
+            progressBarSignUp.visibility = View.INVISIBLE
             return
         }
 
@@ -61,6 +66,9 @@ class SelectionSignUp : AppCompatActivity(), View.OnClickListener {
                         .set(User)
                         .addOnSuccessListener {
                             d("bomohit", "successfully added")
+                            progressBarSignUp.visibility = View.INVISIBLE
+                            Toast.makeText(applicationContext, "Succefully Registered", Toast.LENGTH_SHORT).show()
+                            onBackPressed()
                         }
                         .addOnFailureListener { e ->
                             d("bomohit", "error occur ", e)
