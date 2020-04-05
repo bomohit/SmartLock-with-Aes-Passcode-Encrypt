@@ -58,7 +58,7 @@ class SelectionLogin : AppCompatActivity(), View.OnClickListener {
                     if (decodePwd == password) {
                         progressBar.visibility = View.INVISIBLE
                         Toast.makeText(applicationContext, "Welcome ${result.getField<String>("full name")}", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java).putExtra("email", email))
                     } else {
                         progressBar.visibility = View.INVISIBLE
                         Toast.makeText(applicationContext, "invalid Account", Toast.LENGTH_SHORT).show()
