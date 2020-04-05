@@ -77,6 +77,7 @@ class ProfileFragment : Fragment() {
                 root.profileFullName.setText(fullName)
                 root.profileEmail.setText(email)
                 root.profilePhone.setText(phoneNo)
+                progressBarProfile.visibility = View.INVISIBLE
             }
 
         fun validateForm(): Boolean {
@@ -120,6 +121,7 @@ class ProfileFragment : Fragment() {
                 if (!validateForm()) {
                     editOrConfirm = true
                 } else {
+                    progressBarProfile.visibility = View.VISIBLE
                     val fullname = root.profileFullName.text.toString()
                     val email = root.profileEmail.text.toString()
                     val phoneNo = root.profilePhone.text.toString()
@@ -143,6 +145,7 @@ class ProfileFragment : Fragment() {
                             root.profileEmail.inputType = InputType.TYPE_NULL
                             root.profilePhone.inputType = InputType.TYPE_NULL
 
+                            progressBarProfile.visibility = View.INVISIBLE
                             Toast.makeText(context, "Information Updated!", Toast.LENGTH_SHORT).show()
 
                         }

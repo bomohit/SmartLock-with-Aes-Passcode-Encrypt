@@ -8,10 +8,7 @@ import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -156,6 +153,8 @@ class PasscodeFragment : Fragment() {
                     inputPasscode.isEnabled = false
                     buttonSetPasscode.setText("CHANGE PASSCODE")
                     valid = false
+                    progressBarPasscode.visibility = View.INVISIBLE
+                    Toast.makeText(context, "Passcode Updated!", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { e ->
                     d("bomohit", "error ", e)
@@ -170,7 +169,6 @@ class PasscodeFragment : Fragment() {
                     progressBarPasscode.visibility = View.INVISIBLE
                 } else {
                     setPasscode()
-                    progressBarPasscode.visibility = View.INVISIBLE
                 }
 
             } else {

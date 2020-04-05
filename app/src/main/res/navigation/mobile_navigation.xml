@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_passcode"
         android:name="com.example.smartlock.ui.dashboard.PasscodeFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/passcode"
         tools:layout="@layout/fragment_passcode" />
 
     <fragment

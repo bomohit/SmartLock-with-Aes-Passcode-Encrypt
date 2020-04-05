@@ -67,7 +67,7 @@ class SelectionSignUp : AppCompatActivity(), View.OnClickListener {
                         .addOnSuccessListener {
                             d("bomohit", "successfully added")
                             progressBarSignUp.visibility = View.INVISIBLE
-                            Toast.makeText(applicationContext, "Succefully Registered", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "Successfully Registered", Toast.LENGTH_SHORT).show()
                             onBackPressed()
                         }
                         .addOnFailureListener { e ->
